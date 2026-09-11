@@ -110,9 +110,7 @@ const Technologies = () => {
                 <div className="rounded-2xl border border-[#E2E8F0] p-4">
                     <h3 className="text-base font-bold text-[#0F172A]">Your Stack</h3>
 
-                    <p className="mt-2 text-xs text-[#94A3B8]">
-                        {stack.length === 0 ? 'No technologies selected yet.' : `${stack.length} Technology Selected`}
-                    </p>
+                    <p className="mt-2 text-xs text-[#94A3B8]">{stack.length === 0 ? 'No technologies selected yet.' : `${stack.length} Technology Selected`}</p>
 
                     {stack.length === 0 ? (
                         <div className="mt-4 flex h-[66px] items-center justify-center rounded-2xl border border-dashed border-[#94A3B8] text-xs text-[#94A3B8]">
