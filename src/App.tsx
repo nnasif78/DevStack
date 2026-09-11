@@ -2,8 +2,7 @@ import Navbar from "./Navbar"
 import Hero from './Hero'
 import Technologies from "./Technologies"
 import Footer from "./Footer"
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify'
 
 
 function App() {

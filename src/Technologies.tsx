@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
-import { ToastContainer } from 'react-toastify'
 
 const Technologies = () => {
     const [technologies, setTechnologies] = useState<any[]>([])
@@ -48,7 +47,7 @@ const Technologies = () => {
 
             <div>
                 <h2 className="text-[36px] font-extrabold tracking-[-1px] text-[#0F172A]">
-                    Explore the <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">Technologies</span>
+                    Explore the <span className="technologies-gradient bg-clip-text text-transparent">Technologies</span>
                 </h2>
                 <p className="mt-3 text-base text-[#475569]">
                     Pick one technology per category to build your ideal stack.
@@ -59,7 +58,13 @@ const Technologies = () => {
 
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {technologies.map((technology) => (
-                        <div key={technology.id} className="rounded-lg border border-[#E0F2FE] p-5">
+                        <div
+                            key={technology.id}
+                            className={`rounded-lg border p-5 ${stack.includes(technology.id)
+                                    ? 'brand-selected'
+                                    : 'border-[#E0F2FE] bg-white'
+                                }`}
+                        >
 
                             <div className="flex h-10 items-center justify-between">
                                 <img src={technology.icon} alt={technology.name} className="h-10 w-10" />
@@ -97,8 +102,8 @@ const Technologies = () => {
                             <button
                                 onClick={() => addToStack(technology.id)}
                                 className={`mt-4 h-9 w-full rounded bg-[#0A0F1D] text-xs font-medium text-white ${stack.includes(technology.id)
-                                        ? "cursor-not-allowed"
-                                        : "cursor-pointer"
+                                    ? "cursor-not-allowed"
+                                    : "cursor-pointer"
                                     }`}
                             >
                                 {stack.includes(technology.id) ? '✓ Added to Stack' : 'Add to Stack'}

@@ -3,10 +3,10 @@ import hamburger from './assets/hamburger.png'
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 border-b border-[#d5e0ee] bg-white">
-      <div className="relative mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <button className="md:hidden ml-10"><img src={hamburger} alt="Menu" className="h-6 w-6" /></button>
-        <a href="#" className="absolute left-[47%] -translate-x-1/2 md:static md:translate-x-0 "><img src={logoText} alt="Dev Stack" className="w-[130px]" /></a>
+    <nav className="sticky top-0 bg-white">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between border-b border-[#cad5e4] px-4 sm:px-6 lg:px-8">
+        <button className="w-8 md:hidden"><img src={hamburger} alt="Menu"  className="h-5 w-5" /></button>
+        <a href="#" className="flex flex-1 justify-center md:flex-none"><img src={logoText} alt="Dev Stack" className="h-6" /></a>
         <div className="hidden flex-1 justify-center gap-8 md:flex">
           <a href="#" className="text-sm font-semibold text-[#DB2777]">Home</a>
           <a href="#technologies" className="text-sm font-medium text-[#475569]">Technologies</a>
@@ -14,9 +14,9 @@ const Navbar = () => {
           <a href="#about" className="text-sm font-medium text-[#475569]">About</a>
           <a href="#contact" className="text-sm font-medium text-[#475569]">Contact</a>
         </div>
-        <div className="flex gap-2">
-          <button className="px-3 py-2 text-sm font-medium text-[#334155] cursor-pointer">Sign In</button>
-          <button className="rounded-full bg-[#D91B7E] px-5 py-2.5 text-sm font-semibold text-white cursor-pointer">Sign Up</button>
+        <div className="flex items-center gap-2">
+          <button className="text-xs font-medium text-[#334155] sm:text-sm">Sign In</button>
+          <button className="rounded-full bg-[#D91B7E] px-3 py-2 text-xs font-semibold text-white sm:px-4 sm:text-sm">Sign Up</button>
         </div>
       </div>
     </nav>
