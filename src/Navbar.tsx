@@ -3,10 +3,10 @@ import hamburger from './assets/hamburger.png'
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 bg-white">
+    <nav className="sticky top-0 border-b border-[#d5e0ee] bg-white">
       <div className="relative mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <button className="md:hidden"><img src={hamburger} alt="Menu" className="h-6 w-6" /></button>
-        <a href="#" className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0"><img src={logoText} alt="Dev Stack" className="w-[130px]" /></a>
+        <button className="md:hidden ml-10"><img src={hamburger} alt="Menu" className="h-6 w-6" /></button>
+        <a href="#" className="absolute left-[47%] -translate-x-1/2 md:static md:translate-x-0 "><img src={logoText} alt="Dev Stack" className="w-[130px]" /></a>
         <div className="hidden flex-1 justify-center gap-8 md:flex">
           <a href="#" className="text-sm font-semibold text-[#DB2777]">Home</a>
           <a href="#technologies" className="text-sm font-medium text-[#475569]">Technologies</a>
