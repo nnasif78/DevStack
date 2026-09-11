@@ -1,5 +1,7 @@
 import Navbar from "./Navbar"
 import Hero from './Hero'
+import Technologies from "./Technologies"
+
 
 
 function App() {
@@ -7,6 +9,8 @@ function App() {
     <>
       <Navbar></Navbar>
         <Hero></Hero>
+        <Technologies></Technologies>
+       
     </>
     )
 }
