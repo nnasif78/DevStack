@@ -1,8 +1,9 @@
+import Navbar from "./Navbar"
+
 function App() {
   return (
-      <h1 className=" text-red-500">
-        Dev Stack
-      </h1>
+
+      <Navbar></Navbar>
     
   )
 }
