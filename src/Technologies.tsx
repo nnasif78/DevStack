@@ -1,10 +1,19 @@
 import { useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 
 const Technologies = () => {
     const [technologies, setTechnologies] = useState<any[]>([])
     const [stack, setStack] = useState<string[]>([])
     const [loading, setLoading] = useState(true)
-
+    const badgeColors = [
+        { text: '#0EA5E9', bg: '#E0F2FE' },
+        { text: '#16A34A', bg: '#DCFCE7' },
+        { text: '#9333EA', bg: '#F3E8FF' },
+        { text: '#EA580C', bg: '#FFEDD5' },
+        { text: '#DB2777', bg: '#FCE7F3' },
+        { text: '#CA8A04', bg: '#FEF9C3' },
+    ]
     useEffect(() => {
         fetch('/data.json')
             .then(res => res.json())
@@ -14,24 +23,22 @@ const Technologies = () => {
             })
     }, [])
     const addToStack = (id: string) => {
-        if (!stack.includes(id)) {
-            setStack([...stack, id])
+        if (stack.includes(id)) {
+            toast.error("Technology is already in your stack!")
+            return
         }
+
+        setStack([...stack, id])
+        toast.success("Technology added to your stack!")
     }
-    const badgeColors = [
-        { text: '#0EA5E9', bg: '#E0F2FE' },
-        { text: '#16A34A', bg: '#DCFCE7' },
-        { text: '#9333EA', bg: '#F3E8FF' },
-        { text: '#EA580C', bg: '#FFEDD5' },
-        { text: '#DB2777', bg: '#FCE7F3' },
-        { text: '#CA8A04', bg: '#FEF9C3' },
-    ]
     const removeFromStack = (id: string) => {
         setStack(stack.filter(item => item !== id))
+        toast.success('Technology removed from your stack!')
     }
 
     const removeAll = () => {
         setStack([])
+        toast.success('All technologies removed!')
     }
     if (loading) {
         return <p className="py-20 text-center">Loading technologies...</p>
@@ -89,8 +96,10 @@ const Technologies = () => {
 
                             <button
                                 onClick={() => addToStack(technology.id)}
-                                disabled={stack.includes(technology.id)}
-                                className="mt-4 h-9 w-full cursor-pointer rounded bg-[#0A0F1D] text-xs font-medium text-white disabled:cursor-not-allowed"
+                                className={`mt-4 h-9 w-full rounded bg-[#0A0F1D] text-xs font-medium text-white ${stack.includes(technology.id)
+                                        ? "cursor-not-allowed"
+                                        : "cursor-pointer"
+                                    }`}
                             >
                                 {stack.includes(technology.id) ? '✓ Added to Stack' : 'Add to Stack'}
                             </button>
