@@ -15,7 +15,7 @@ const Hero = () => {
           side by side, and put together the stack that fits your next project.
         </p>
         <div className="mt-8 flex justify-center gap-4 md:justify-start">
-          <button className="explore-gradient rounded-md px-6 py-3 text-sm font-semibold text-white">
+          <button className="h-[42px] w-[170px] cursor-pointer explore-gradient rounded-md text-[11px] font-semibold text-white">
             Explore Technologies
           </button>
           <button className="h-[42px] w-[170px] cursor-pointer rounded-md border border-[#374151] bg-white text-sm font-medium text-[#374151]">
