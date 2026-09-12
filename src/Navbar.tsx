@@ -15,8 +15,8 @@ const Navbar = () => {
           <a href="#contact" className="text-sm font-medium text-[#475569]">Contact</a>
         </div>
         <div className="flex items-center gap-2">
-          <button className="text-xs font-medium text-[#334155] sm:text-sm">Sign In</button>
-          <button className="rounded-full bg-[#D91B7E] px-3 py-2 text-xs font-semibold text-white sm:px-4 sm:text-sm">Sign Up</button>
+          <button className="text-xs cursor-pointer font-medium text-[#334155] sm:text-sm">Sign In</button>
+          <button className="rounded-full cursor-pointer bg-[#D91B7E] px-3 py-2 text-xs font-semibold text-white sm:px-4 sm:text-sm">Sign Up</button>
         </div>
       </div>
     </nav>
