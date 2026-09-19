@@ -188,7 +188,7 @@ This allows the child component to communicate with the parent without directly 
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/nnasif78/DevStack.git
 ```
 
 ### 2. Navigate to the Project
